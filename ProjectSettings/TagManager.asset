@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - Enemy
+  - Moveable
+  - Gun
+  - GunHolder
   layers:
   - Default
   - TransparentFX
