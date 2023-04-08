@@ -88,14 +88,15 @@ private float currentRecoil = 0f; // Mevcut geri tepme miktarı
                     RaycastHit holdHit;
                     if (Physics.Raycast(_camera.transform.position, _camera.transform.forward, out holdHit,pickupRange))
                     {
-                        Debug.Log(holdHit.transform.tag);
-                        Debug.Log("picked ");
-                        PickedObject(holdHit.transform.gameObject);
+                        if (holdHit.transform.CompareTag("Moveable"))
+                        {
+                            PickedObject(holdHit.transform.gameObject);
+                        }
+                        
                     }
                 }
                 else
                 {
-                    Debug.Log("Dropped");
                     DropObject();
                 }
             }
