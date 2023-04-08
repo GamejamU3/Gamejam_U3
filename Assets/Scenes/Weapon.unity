@@ -402,7 +402,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99a4ab7cd2ccd3c4e95bd57b77e4d018, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
+  walkSpeed: 8
+  runSpeed: 12
+  gravity: 9.8
+  jumpPower: 1.25
 --- !u!143 &440100406
 CharacterController:
   m_ObjectHideFlags: 0
@@ -1157,7 +1160,7 @@ MonoBehaviour:
   recoilAmount: 1
   maxRecoil: 3
   recoilRecoverySpeed: 2
-  pickupDistance: 2
+  pickupDistance: 30
   throwForce: 10
 --- !u!1 &2091708218
 GameObject:
