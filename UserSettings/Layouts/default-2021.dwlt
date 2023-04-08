@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 1536
     height: 780.8
   m_ShowMode: 4
-  m_Title: Hierarchy
+  m_Title: Scene
   m_RootView: {fileID: 6}
   m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
@@ -48,7 +48,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 200}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 38
+  controlID: 17
 --- !u!114 &3
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -68,8 +68,8 @@ MonoBehaviour:
     y: 0
     width: 334.40002
     height: 730.8
-  m_MinSize: {x: 276, y: 71}
-  m_MaxSize: {x: 4001, y: 4021}
+  m_MinSize: {x: 275, y: 50}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 14}
   m_Panes:
   - {fileID: 14}
@@ -111,7 +111,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 1
   m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: ConsoleWindow
+  m_Name: ProjectBrowser
   m_EditorClassIdentifier: 
   m_Children: []
   m_Position:
@@ -120,15 +120,15 @@ MonoBehaviour:
     y: 516
     width: 1201.6
     height: 214.79999
-  m_MinSize: {x: 101, y: 121}
-  m_MaxSize: {x: 4001, y: 4021}
-  m_ActualView: {fileID: 18}
+  m_MinSize: {x: 231, y: 271}
+  m_MaxSize: {x: 10001, y: 10021}
+  m_ActualView: {fileID: 13}
   m_Panes:
   - {fileID: 18}
   - {fileID: 12}
   - {fileID: 13}
-  m_Selected: 0
-  m_LastSelected: 2
+  m_Selected: 2
+  m_LastSelected: 0
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -224,7 +224,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 200}
   m_MaxSize: {x: 16192, y: 16192}
   vertical: 1
-  controlID: 39
+  controlID: 29
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -249,7 +249,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 100}
   m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
-  controlID: 40
+  controlID: 30
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -351,22 +351,22 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Sci-Fi Styled Modular Pack/Prefabs/Lights
+    - Assets/Sci-Fi Styled Modular Pack/Prefabs/Floors
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Sci-Fi Styled Modular Pack/Prefabs/Lights
+  - Assets/Sci-Fi Styled Modular Pack/Prefabs/Floors
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\eslem\OneDrive\Belgeler\GitHub\Gamejam_U3
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 226.20001}
-    m_SelectedIDs: e48a0000
-    m_LastClickedID: 35556
-    m_ExpandedIDs: 00000000ae870000b0870000b2870000b48700003a890000ea8a000000ca9a3b
+    m_SelectedIDs: 046b0000
+    m_LastClickedID: 27396
+    m_ExpandedIDs: 00000000ae670000b0670000b2670000b4670000b6670000b86700005e69000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -382,7 +382,7 @@ MonoBehaviour:
       m_IsRenaming: 0
       m_OriginalEventType: 11
       m_IsRenamingFilename: 1
-      m_ClientGUIView: {fileID: 0}
+      m_ClientGUIView: {fileID: 5}
     m_SearchString: 
     m_CreateAssetUtility:
       m_EndAction: {fileID: 0}
@@ -394,7 +394,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000ae870000b0870000b2870000b4870000
+    m_ExpandedIDs: 00000000ae670000b0670000b2670000b4670000b6670000b8670000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -526,7 +526,7 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: 2adff9ffa644faffcc4efaff786efaff187ffaffa6bbfaff7e09fbfffe10fbffec24fbff2461fcffe29dfcff46fefcff783afdff9460fdff3a65fdff3c6dfdff6a72fdff3ca7fdff9677fefffc93feff5ea8feff2ab0feff56c0feff6868ffffe269ffff14b4ffffa4cdffffb4d6fffffeddffff64efffff74800000
+      m_ExpandedIDs: c096ffffa0a8ffffa2cfffffbef8ffff36fbffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -584,8 +584,8 @@ MonoBehaviour:
       floating: 0
       collapsed: 0
       displayed: 1
-      snapOffset: {x: -100, y: -25.600006}
-      snapOffsetDelta: {x: 0, y: 0}
+      snapOffset: {x: 0, y: 0}
+      snapOffsetDelta: {x: -100, y: -25.600006}
       snapCorner: 3
       id: Tool Settings
       index: 0
@@ -776,9 +776,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 11.160434, y: -1.1273417, z: 24.120365}
+    m_Target: {x: 13.574825, y: 3.8106203, z: 49.159447}
     speed: 2
-    m_Value: {x: 11.160434, y: -1.1273417, z: 24.120365}
+    m_Value: {x: 13.574827, y: 3.8106203, z: 49.159447}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -825,13 +825,13 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: -0.21445473, y: -0.34402776, z: 0.08111184, w: -0.9106497}
+    m_Target: {x: -0.10084412, y: -0.1572469, z: 0.016265634, w: -0.9823757}
     speed: 2
-    m_Value: {x: -0.21294531, y: -0.34547925, z: 0.08090665, w: -0.9103585}
+    m_Value: {x: -0.10085718, y: -0.15575582, z: 0.016112557, w: -0.9825011}
   m_Size:
-    m_Target: 2.1844883
+    m_Target: 1.8988013
     speed: 2
-    m_Value: 2.1844883
+    m_Value: 1.9882736
   m_Ortho:
     m_Target: 0
     speed: 2
