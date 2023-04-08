@@ -13,26 +13,26 @@ public class DoorMng : MonoBehaviour
     }
     private void Start()
     {
-        //Invoke("Open", 2f);
+     
     }
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag=="Player")
-        {      
-            if(isLocked==false)
+        if (other.gameObject.tag == "Player")
+        {
+            if (isLocked == false)
             {
                 Open();
-            } 
+            }
         }
     }
 
     void OnTriggerExit(Collider other)
     {
-      
+
         if (other.gameObject.tag == "Player")
         {
-           
+
             Close();
         }
     }
