@@ -14,6 +14,11 @@ public class Gun : MonoBehaviour
     bool isFiring = false;
     float nextFireTime = 0f;
 
+    bool hasGun=false;
+    [SerializeField] Animator gunAnim;
+    public bool gunPlace=false;
+
+
     float currentAmmo;
     private bool haveAmmo = true;
     private bool isReloading = false;
@@ -34,6 +39,12 @@ public class Gun : MonoBehaviour
     [SerializeField] private float maxRecoil = 3f; // Maksimum geri tepme miktarı
     [SerializeField] private float recoilRecoverySpeed = 2f; // Geri tepmenin toparlanma hızı
 
+
+    [Header("Pick Up")]
+    public float pickupDistance = 10f;
+    public float throwForce = 10f;
+    private Rigidbody currentObject;
+
 private float currentRecoil = 0f; // Mevcut geri tepme miktarı
 
     private void Start()
@@ -44,39 +55,49 @@ private float currentRecoil = 0f; // Mevcut geri tepme miktarı
     private void Update()
     {
         Debug.DrawRay(_camera.transform.position, _camera.transform.forward * currentWeapon.attackRange, Color.green, 0.1f);
-        /** Tek tek sıkma
-        if (Input.GetButtonDown("Fire1"))
-        {  
-            if(haveAmmo){
-                currentRecoil += recoilAmount;
-                currentRecoil = Mathf.Clamp(currentRecoil, 0f, maxRecoil);
-                StartCoroutine(nameof(Shoot));
-            }else{
-                if(isReloading==false) StartCoroutine(nameof(Reload));
+
+
+        if(Input.GetKeyDown(KeyCode.Alpha1)){
+            hasGun = !hasGun;
+            gunAnim.SetBool("HasGun",hasGun);
+            Debug.Log(hasGun);
+        }
+
+        if(hasGun){
+            if (Input.GetButtonDown("Fire1")) {
+                isFiring = true;
+            }
+            if (Input.GetButtonUp("Fire1")) {
+                isFiring = false;
+            }
+            currentRecoil = Mathf.Lerp(currentRecoil, 0f, Time.deltaTime * recoilRecoverySpeed);
+            // Silahı geri tepme miktarına göre döndürme
+            transform.localRotation = Quaternion.Euler(-currentRecoil, transform.localRotation.eulerAngles.y, transform.localRotation.eulerAngles.z);
+        }else{
+
+            if(Input.GetButtonDown("Fire1")){
+                PickupObject();
+            }
+
+            if (currentObject != null)
+            {
+                Vector3 newPosition = Camera.main.transform.position + Camera.main.transform.forward * pickupDistance;
+                currentObject.transform.position = newPosition;
+
+                // Oyuncu, boşluk çubuğuna tekrar basarak nesneyi bırakır.
+                if (Input.GetButtonDown("Fire1"))
+                {
+                    DropObject();
+                }
             }
         }
-
-        currentRecoil = Mathf.Lerp(currentRecoil, 0f, Time.deltaTime * recoilRecoverySpeed);
-        // Silahı geri tepme miktarına göre döndürme
-        transform.localRotation = Quaternion.Euler(-currentRecoil, transform.localRotation.eulerAngles.y, transform.localRotation.eulerAngles.z);
-        **/
-
-        if (Input.GetButtonDown("Fire1")) {
-            isFiring = true;
-        }
-        if (Input.GetButtonUp("Fire1")) {
-            isFiring = false;
-        }
-
-        currentRecoil = Mathf.Lerp(currentRecoil, 0f, Time.deltaTime * recoilRecoverySpeed);
-            // Silahı geri tepme miktarına göre döndürme
-        transform.localRotation = Quaternion.Euler(-currentRecoil, transform.localRotation.eulerAngles.y, transform.localRotation.eulerAngles.z);
+        
     }
 
     private void FixedUpdate() {
 
-        if(currentAmmo > 0){
-            if (isFiring && Time.time > nextFireTime) {
+        if(currentAmmo>0){
+            if (isFiring && Time.time > nextFireTime && gunPlace) {
                 nextFireTime = Time.time + currentWeapon.fireDelay;
                 currentRecoil += recoilAmount;
                 currentRecoil = Mathf.Clamp(currentRecoil, 0f, maxRecoil);
@@ -122,5 +143,26 @@ private float currentRecoil = 0f; // Mevcut geri tepme miktarı
         currentAmmo = currentWeapon.ammoCapacity;
         isReloading=false;
         haveAmmo = true;
+    }
+
+    void PickupObject()
+    {
+        RaycastHit hit;
+        if (Physics.Raycast(_camera.transform.position, _camera.transform.forward, out hit, pickupDistance))
+        {   
+            Debug.Log(hit.transform.gameObject.tag);
+            if (hit.transform.CompareTag("Moveable"))
+            {
+                currentObject = hit.collider.gameObject.GetComponent<Rigidbody>();
+                currentObject.useGravity = false;
+            }
+        }
+    }
+
+    void DropObject()
+    {
+        currentObject.useGravity = true;
+        currentObject.AddForce(Camera.main.transform.forward * throwForce, ForceMode.Impulse);
+        currentObject = null;
     }
 }
