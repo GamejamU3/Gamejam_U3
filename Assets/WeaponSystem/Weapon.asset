@@ -16,7 +16,7 @@ MonoBehaviour:
   weaponDescription: 
   weaponDamage: 50
   ammoCapacity: 30
-  reloadTime: 1
+  reloadTime: 2
   fireDelay: 0.1
   fireSpeed: 100
   attackRange: 100
