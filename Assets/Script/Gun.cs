@@ -14,7 +14,7 @@ public class Gun : MonoBehaviour
     bool isFiring = false;
     float nextFireTime = 0f;
 
-    bool hasGun=false;
+    public bool hasGun=false;
     [SerializeField] Animator gunAnim;
     public bool gunPlace=false;
 
@@ -185,9 +185,13 @@ private float currentRecoil = 0f; // Mevcut geri tepme miktarı
             if (hit.transform.CompareTag("Enemy"))
             {
                 GameObject blood = Instantiate(bloodVfx,hit.transform); // or SetActive(true)
+                hit.transform.gameObject.GetComponent<BotTask>().die();
                 //yield return new WaitForSeconds(bloodTime);
                 //Destroy(blood); //or SetActive(false);
-            } 
+            }else if (hit.transform.CompareTag("ParkourButton"))
+            {
+                hit.transform.gameObject.GetComponent<ParkourButton>().ChangePosition();
+            }
         }
         yield return new WaitForSeconds(currentWeapon.fireDelay);
         canFire = true;
