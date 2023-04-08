@@ -187,7 +187,10 @@ private float currentRecoil = 0f; // Mevcut geri tepme miktarı
                 GameObject blood = Instantiate(bloodVfx,hit.transform); // or SetActive(true)
                 //yield return new WaitForSeconds(bloodTime);
                 //Destroy(blood); //or SetActive(false);
-            } 
+            }else if (hit.transform.CompareTag("ParkourButton"))
+            {
+                hit.transform.gameObject.GetComponent<ParkourButton>().ChangePosition();
+            }
         }
         yield return new WaitForSeconds(currentWeapon.fireDelay);
         canFire = true;
