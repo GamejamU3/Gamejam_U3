@@ -14,10 +14,14 @@ public class GenelManager : MonoBehaviour
 
     public GameObject DersKapi;
 
-
+    [Space(10)]
+    [Header("Bot")]
     public Transform[] botSpawnPos;
     public GameObject bot;
     public int dieBotCount;
+    [Space(10)]
+    [Header("NPC")]
+    public GameObject NPC;
 
     [Space(10)]
     public int taskNum = 0;
@@ -26,6 +30,7 @@ public class GenelManager : MonoBehaviour
     // 2 -> Silahýný çek
     // 3-> 10 tane bot vur
     // 4 -> Cephaneye git ve silahýný býrak
+    // 5 -> CEPHANEYE GÝT !!!
    
 
     void Start()
@@ -33,6 +38,7 @@ public class GenelManager : MonoBehaviour
         black.GetComponent<Image>().DOFade(0, 1f).From(1f);
         taskText.text = "";
         StartCoroutine(gorev());
+        NPC.SetActive(false);
        
     }
   
@@ -62,7 +68,10 @@ public class GenelManager : MonoBehaviour
         spawnBot();
         yield return new WaitUntil(() => taskNum == 4);
         DersKapi.GetComponent<DoorMng>().isLocked = false;
+        NPC.SetActive(true);
         StartCoroutine(changeTask());
+        yield return new WaitUntil(() => taskNum == 5);
+        //bu sefer change task yok çünkü sert yazdýrýcam
     }
 
     public void spawnBot()

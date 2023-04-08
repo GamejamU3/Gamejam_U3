@@ -33,6 +33,7 @@ public class YemekhaneGorev : MonoBehaviour
         for (int i = 0; i < konusmalar.Length; i++)
         {
             sound.clip = konusmalar[i];
+            sound.Play();
             yield return new WaitForSeconds(konusmalar[i].length);
         }
         yield return new WaitForSeconds(2);
