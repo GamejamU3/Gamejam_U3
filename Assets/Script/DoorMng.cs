@@ -18,22 +18,18 @@ public class DoorMng : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-     
         if (other.gameObject.tag=="Player")
-        {
-           
+        {      
             if(isLocked==false)
             {
                 Open();
-            }
-          
+            } 
         }
     }
 
     void OnTriggerExit(Collider other)
     {
       
- 
         if (other.gameObject.tag == "Player")
         {
            

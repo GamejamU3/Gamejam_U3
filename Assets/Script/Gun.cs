@@ -41,7 +41,7 @@ public class Gun : MonoBehaviour
 
 
     [Header("Pick Up")]
-    public float pickupDistance = 10f;
+    [SerializeField] float pickupDistance;
     public float throwForce = 10f;
     private Rigidbody currentObject;
 
@@ -54,10 +54,11 @@ private float currentRecoil = 0f; // Mevcut geri tepme miktarı
 
     private void Update()
     {
-        Debug.DrawRay(_camera.transform.position, _camera.transform.forward * currentWeapon.attackRange, Color.green, 0.1f);
+        //Debug.DrawRay(_camera.transform.position, _camera.transform.forward * currentWeapon.attackRange, Color.green, 0.1f);
+        Debug.DrawRay(_camera.transform.position, _camera.transform.forward * pickupDistance, Color.red, 0.1f);
 
 
-        if(Input.GetKeyDown(KeyCode.Alpha1)){
+        if (Input.GetKeyDown(KeyCode.Alpha1)){
             hasGun = !hasGun;
             gunAnim.SetBool("HasGun",hasGun);
         }
@@ -153,6 +154,7 @@ private float currentRecoil = 0f; // Mevcut geri tepme miktarı
 
     void PickupObject()
     {
+
         RaycastHit hit;
         if (Physics.Raycast(_camera.transform.position, _camera.transform.forward, out hit, pickupDistance))
         {   
