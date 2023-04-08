@@ -186,7 +186,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1165874558686627281}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -458,6 +458,9 @@ MonoBehaviour:
   currentWeapon: {fileID: 11400000, guid: 32c623ce9bb37e9478bca3dcb67ae878, type: 2}
   gunAnim: {fileID: 1165874558821549816}
   gunPlace: 0
+  holdArea: {fileID: 0}
+  pickupRange: 0
+  pickupForce: 150
   enemyType: 0
   bloodVfx: {fileID: 2631374381035069104, guid: a7a287d3dcfd2eb4e9f1189927a1a546,
     type: 3}
@@ -466,5 +469,3 @@ MonoBehaviour:
   recoilAmount: 1
   maxRecoil: 3
   recoilRecoverySpeed: 2
-  pickupDistance: 30
-  throwForce: 10
