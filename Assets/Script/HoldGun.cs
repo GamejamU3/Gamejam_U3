@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class HoldGun : MonoBehaviour
 {
+    public int status = 0; 
+   
     [SerializeField] GameObject Gun;
 
-
-    public void SetHold(bool value){
-        Gun.GetComponent<Gun>().gunPlace = value;
+    public void HoldingGun(){
+        Gun.GetComponent<Gun>().gunPlace = !Gun.GetComponent<Gun>().gunPlace;
     }
-
 }

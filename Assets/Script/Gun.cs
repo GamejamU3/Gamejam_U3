@@ -60,7 +60,6 @@ private float currentRecoil = 0f; // Mevcut geri tepme miktarı
         if(Input.GetKeyDown(KeyCode.Alpha1)){
             hasGun = !hasGun;
             gunAnim.SetBool("HasGun",hasGun);
-            Debug.Log(hasGun);
         }
 
         if(hasGun){
@@ -96,15 +95,22 @@ private float currentRecoil = 0f; // Mevcut geri tepme miktarı
 
     private void FixedUpdate() {
 
-        if(currentAmmo>0){
-            if (isFiring && Time.time > nextFireTime && gunPlace) {
-                nextFireTime = Time.time + currentWeapon.fireDelay;
-                currentRecoil += recoilAmount;
-                currentRecoil = Mathf.Clamp(currentRecoil, 0f, maxRecoil);
-                StartCoroutine(nameof(Shoot));
+        if (gunPlace)
+        {
+            if (currentAmmo > 0)
+            {
+                if (isFiring && Time.time > nextFireTime)
+                {
+                    nextFireTime = Time.time + currentWeapon.fireDelay;
+                    currentRecoil += recoilAmount;
+                    currentRecoil = Mathf.Clamp(currentRecoil, 0f, maxRecoil);
+                    StartCoroutine(nameof(Shoot));
+                }
             }
-        }else{
-            if(isReloading==false) StartCoroutine(nameof(Reload));
+            else
+            {
+                if (isReloading == false) StartCoroutine(nameof(Reload));
+            }
         }
     }
 

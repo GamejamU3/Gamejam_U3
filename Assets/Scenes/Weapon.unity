@@ -189,6 +189,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d942f827db2f9cc449db95657c866f47, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  status: 0
   Gun: {fileID: 1752994364}
 --- !u!1 &335219013
 GameObject:
@@ -1108,6 +1109,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: All.fbx
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 7d00497f4d37c104d9bc6414c78c297a,
+        type: 3}
+      propertyPath: m_TagString
+      value: Gun
       objectReference: {fileID: 0}
     - target: {fileID: 3378289122165654563, guid: 7d00497f4d37c104d9bc6414c78c297a,
         type: 3}
