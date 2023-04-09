@@ -192,6 +192,10 @@ private float currentRecoil = 0f; // Mevcut geri tepme miktarı
             {
                 hit.transform.gameObject.GetComponent<ParkourButton>().ChangePosition();
             }
+            else if(hit.transform.gameObject.tag=="Door")
+            {
+                hit.transform.gameObject.GetComponent<DoorTask>().open();
+            }
         }
         yield return new WaitForSeconds(currentWeapon.fireDelay);
         canFire = true;

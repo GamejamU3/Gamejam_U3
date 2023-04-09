@@ -14,6 +14,7 @@ public class GenelManager : MonoBehaviour
 
     public GameObject DersKapi;
     public GameObject yemekhaneKapi;
+    public GameObject cephaneKapi;
 
     [Space(10)]
     [Header("Bot")]
@@ -23,6 +24,8 @@ public class GenelManager : MonoBehaviour
     [Space(10)]
     [Header("NPC")]
     public GameObject NPC;
+    [Header("Cephanelik")]
+    public GameObject silahOnIzleme;
 
     [Space(10)]
     public int taskNum = 0;
@@ -32,6 +35,9 @@ public class GenelManager : MonoBehaviour
     // 3-> 10 tane bot vur
     // 4 -> Cephaneye git ve silahýný býrak
     // 5 -> CEPHANEYE GÝT !!!
+    // 6 -> Kapýya yaklaþ
+    // 7 -> Kapýya ateþ et
+    // 8 -> Kapýdan içeri gir
    
 
     void Start()
@@ -40,7 +46,7 @@ public class GenelManager : MonoBehaviour
         taskText.text = "";
         StartCoroutine(gorev());
         NPC.SetActive(false);
-       
+        silahOnIzleme.SetActive(false);
     }
   
 
@@ -73,6 +79,13 @@ public class GenelManager : MonoBehaviour
         StartCoroutine(changeTask());
         yield return new WaitUntil(() => taskNum == 5);
         //bu sefer change task yok çünkü sert yazdýrýcam
+        cephaneKapi.GetComponent<DoorMng>().isLocked = false;
+        silahOnIzleme.SetActive(true);
+        yield return new WaitUntil(() => taskNum == 6);
+        StartCoroutine(changeTask());
+        silahOnIzleme.SetActive(false);
+        yield return new WaitUntil(() => taskNum == 7);
+        StartCoroutine(changeTask());
     }
 
     public void spawnBot()

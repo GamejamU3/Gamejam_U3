@@ -69,13 +69,17 @@ public class NPCTask : MonoBehaviour
         anim.SetBool("walk", true);
         target = gidecegiKonum;
         mng.yemekhaneKapi.GetComponent<Animator>().SetBool("character_nearby", true);
-        transform.DOMove(gidecegiKonum.position, 5f).OnComplete(()=> mng.yemekhaneKapi.GetComponent<Animator>().SetBool("character_nearby", false));
+        transform.DOMove(gidecegiKonum.position, 5f);
+
         gorunmezEngel.SetActive(true);
         mng.DersKapi.GetComponent<DoorMng>().isLocked = true;
+        yield return new WaitForSeconds(3);
+        mng.yemekhaneKapi.GetComponent<Animator>().SetBool("character_nearby", false);
         //karakterin hareket etmesini aç
 
         mng.taskText.text = "";
         mng.taskText.text = "<color=red>CEPHANELIGE HEMEN GIT !!!</color>";
+        mng.taskNum = 5;
         
         
     }
