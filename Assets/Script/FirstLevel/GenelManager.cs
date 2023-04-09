@@ -29,6 +29,10 @@ public class GenelManager : MonoBehaviour
     public GameObject NPC;
     [Header("Cephanelik")]
     public GameObject silahOnIzleme;
+    [Header("SonKonusma")]
+    public AudioClip[] sesler;
+    private AudioSource sound;
+    public string[] bozukYazi;
 
     [Space(10)]
     public int taskNum = 0;
@@ -51,6 +55,7 @@ public class GenelManager : MonoBehaviour
         NPC.SetActive(false);
         silahOnIzleme.SetActive(false);
         player = GameObject.Find("Player");
+        sound = gameObject.GetComponent<AudioSource>();
     }
   
 
@@ -96,6 +101,37 @@ public class GenelManager : MonoBehaviour
         yield return new WaitUntil(() => taskNum == 7);
         StopCoroutine(chngtsk);
         chngtsk = StartCoroutine(changeTask());
+        yield return new WaitUntil(() => taskNum == 8);
+
+        player.GetComponent<Movement>().canMove = false;
+
+        for (int i = 0; i < sesler.Length; i++)
+        {
+            sound.clip = sesler[i];
+            sound.Play();
+            yield return new WaitForSeconds(sesler[i].length);
+        }
+
+        player.GetComponent<Movement>().canMove = true;
+        taskNum = 9;
+        yield return new WaitUntil(() => taskNum == 9);
+        StartCoroutine(bozul());
+
+    }
+
+    IEnumerator bozul()
+    {
+        while(true)
+        {
+            taskText.text = "";
+            foreach (char i in bozukYazi[Random.Range(0,bozukYazi.Length)])
+            {
+                taskText.text += i.ToString();
+                yield return new WaitForSeconds(yaziBeklemeSure);
+
+            }
+        }
+        
     }
 
     public void spawnBot()

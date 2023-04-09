@@ -26,6 +26,7 @@ public class DoorTask : MonoBehaviour
             if (mng.taskNum == 7)
             {
                 anim.SetBool("character_nearby", true);
+                mng.taskNum = 8;
             }
         }
         
