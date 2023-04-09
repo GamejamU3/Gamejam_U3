@@ -181,7 +181,9 @@ private float currentRecoil = 0f; // Mevcut geri tepme miktarı
         //Debug.Log("Camera position:" + _camera.transform.position + ", Recoil Position:" + (_camera.transform.position + recoil));
 
         if(Physics.Raycast(_camera.transform.position + recoil ,_camera.transform.forward,out hit, currentWeapon.attackRange))
-        {   
+        {
+            Debug.Log(hit.transform.tag);
+
             if (hit.transform.CompareTag("Enemy"))
             {
                 GameObject blood = Instantiate(bloodVfx,hit.transform); // or SetActive(true)
