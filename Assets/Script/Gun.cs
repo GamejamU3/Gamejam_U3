@@ -22,7 +22,7 @@ public class Gun : MonoBehaviour
     float currentAmmo;
     private bool haveAmmo = true;
     private bool isReloading = false;
-    private float bloodTime = 1f;
+    private float bloodTime = 0.3f;
 
     [Header("Pickup Settings")]
     [SerializeField] Transform holdArea;
@@ -40,8 +40,8 @@ public class Gun : MonoBehaviour
     public EnemyType enemyType;
 
     [Header("VFX")]
-    [SerializeField] GameObject bloodVfx;
-    [SerializeField] GameObject muzzleFlashVfx;
+    [SerializeField] GameObject impactVfx;
+    [SerializeField] ParticleSystem muzzleFlashVfx;
 
     [Header("Camera")]
     public Camera _camera;
@@ -186,10 +186,9 @@ private float currentRecoil = 0f; // Mevcut geri tepme miktarı
 
             if (hit.transform.CompareTag("Enemy"))
             {
-                GameObject blood = Instantiate(bloodVfx,hit.transform); // or SetActive(true)
+                
                 hit.transform.gameObject.GetComponent<BotTask>().die();
-                //yield return new WaitForSeconds(bloodTime);
-                //Destroy(blood); //or SetActive(false);
+                
             }else if (hit.transform.CompareTag("ParkourButton"))
             {
                 hit.transform.gameObject.GetComponent<ParkourButton>().ChangePosition();
@@ -198,6 +197,12 @@ private float currentRecoil = 0f; // Mevcut geri tepme miktarı
             {
                 hit.transform.gameObject.GetComponent<DoorTask>().open();
             }
+
+            muzzleFlashVfx.Emit(1);
+            GameObject blood = Instantiate(impactVfx, hit.point, Quaternion.LookRotation(hit.normal));
+            yield return new WaitForSeconds(bloodTime);
+            Destroy(blood);
+
         }
         yield return new WaitForSeconds(currentWeapon.fireDelay);
         canFire = true;
