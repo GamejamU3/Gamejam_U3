@@ -10,6 +10,7 @@ TagManager:
   - GunHolder
   - ParkourButton
   - Door
+  - Button
   layers:
   - Default
   - TransparentFX

@@ -197,6 +197,10 @@ private float currentRecoil = 0f; // Mevcut geri tepme miktarı
             {
                 hit.transform.gameObject.GetComponent<DoorTask>().open();
             }
+            else if (hit.transform.CompareTag("Button"))
+            {
+                hit.transform.gameObject.GetComponent<ButtonMng>().isaretle();
+            }
 
             muzzleFlashVfx.Emit(1);
             GameObject blood = Instantiate(impactVfx, hit.point, Quaternion.LookRotation(hit.normal));
