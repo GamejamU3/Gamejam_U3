@@ -13,6 +13,7 @@ public class GenelManager : MonoBehaviour
     public float yaziBeklemeSure;
 
     public GameObject DersKapi;
+    public GameObject yemekhaneKapi;
 
     [Space(10)]
     [Header("Bot")]

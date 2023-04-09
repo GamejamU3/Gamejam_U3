@@ -15,6 +15,7 @@ public class NPCTask : MonoBehaviour
     public Transform gidecegiKonum;
     public Transform player;
     public GameObject gorunmezEngel;
+    
 
     private Animator anim;
 
@@ -67,9 +68,15 @@ public class NPCTask : MonoBehaviour
         anim.SetBool("talk", false);
         anim.SetBool("walk", true);
         target = gidecegiKonum;
-        transform.DOMove(gidecegiKonum.position, 5f);
+        mng.yemekhaneKapi.GetComponent<Animator>().SetBool("character_nearby", true);
+        transform.DOMove(gidecegiKonum.position, 5f).OnComplete(()=> mng.yemekhaneKapi.GetComponent<Animator>().SetBool("character_nearby", false));
         gorunmezEngel.SetActive(true);
         mng.DersKapi.GetComponent<DoorMng>().isLocked = true;
         //karakterin hareket etmesini aç
+
+        mng.taskText.text = "";
+        mng.taskText.text = "<color=red>CEPHANELIGE HEMEN GIT !!!</color>";
+        
+        
     }
 }
