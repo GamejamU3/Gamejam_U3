@@ -29,7 +29,7 @@ public class EgitmenTask : MonoBehaviour
 
     IEnumerator task()
     {
-        yield return new WaitForSeconds(1f);
+        
         mng.taskNum = 2;
         //sound.clip = konusmalar[0];
         //sound.Play();
