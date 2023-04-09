@@ -12,6 +12,7 @@ public class GenelManager : MonoBehaviour
     public string[] task;
     public float yaziBeklemeSure;
     private Coroutine chngtsk;
+    public GameObject player;
     [Space(10)]
     [Header("Kapýlar")]
     public GameObject DersKapi;
@@ -49,6 +50,7 @@ public class GenelManager : MonoBehaviour
         StartCoroutine(gorev());
         NPC.SetActive(false);
         silahOnIzleme.SetActive(false);
+        player = GameObject.Find("Player");
     }
   
 
