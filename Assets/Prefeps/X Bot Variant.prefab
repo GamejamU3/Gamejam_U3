@@ -126,3 +126,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mng: {fileID: 0}
+  ses: {fileID: 8300000, guid: d7e27dedefb733749902c617aaa9e548, type: 3}
