@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
@@ -13,21 +14,29 @@ public class PuzzleLight : MonoBehaviour
     [SerializeField] Material defaultMaterial;
     [SerializeField] Material newMaterial;
 
+    [SerializeField] String correctName;
+
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.transform.CompareTag(rightTag))
+        if (other.transform.gameObject.name == correctName)
         {
+            Debug.Log(other.transform.gameObject.name + "Girdi");
             light.intensity = 2;
-            letter.transform.position = new Vector3(currentPosition.x, currentPosition.y, -19.90f);
-            letter.transform.gameObject.GetComponent<MeshRenderer>().sharedMaterials[1] = newMaterial;
-
+            letter.transform.position = new Vector3(currentPosition.x, currentPosition.y, -19.95f);
+            letter.transform.gameObject.GetComponent<Renderer>().materials[1].EnableKeyword("_EMISSION");
         }
-        else
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.transform.gameObject.name == correctName)
         {
+            Debug.Log(other.transform.gameObject.name + "Çýktý.");
             light.intensity = 10;
             letter.transform.position = currentPosition;
-            letter.transform.gameObject.GetComponent<MeshRenderer>().sharedMaterials[1] = defaultMaterial;
+            letter.transform.gameObject.GetComponent<Renderer>().materials[1] = defaultMaterial;
+            letter.transform.gameObject.GetComponent<Renderer>().materials[1].DisableKeyword("_EMISSION");
         }
     }
 }

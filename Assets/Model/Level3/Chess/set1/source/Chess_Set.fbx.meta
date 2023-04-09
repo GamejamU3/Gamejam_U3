@@ -3,7 +3,72 @@ guid: aa3e68d940863de42a64160ddde310ff
 ModelImporter:
   serializedVersion: 21202
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Bishop_1
+    second: {fileID: 2100000, guid: b3a57c9b456965a4ca7e7c53a5eefbbe, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Bishop_2
+    second: {fileID: 2100000, guid: 15ee0ea8e3a7cec428d1d7412ac65166, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: ChessBoard_Final.001
+    second: {fileID: 2100000, guid: fbbe11a5bf72b8a46a575ae3ef3394e1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: King_1
+    second: {fileID: 2100000, guid: 6d8b6ba5a34576c4ebf87885c17924cd, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: King_2
+    second: {fileID: 2100000, guid: 0e6cfaf0a539ff3479a8fdb50ca42896, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Knight_1
+    second: {fileID: 2100000, guid: c32a293df7bc43b40a71a06b29f8798f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Knight_2
+    second: {fileID: 2100000, guid: 01b62190aa30e8f47ac42ce11494e352, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Pawn_1
+    second: {fileID: 2100000, guid: 02d41c55ee6f21f41a99b6f7092e5218, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Pawn_2
+    second: {fileID: 2100000, guid: 4b71dd0bcf3c37b40970b6dee577c31b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Queen_1
+    second: {fileID: 2100000, guid: 07b02055648035e4280affd11627ca85, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Queen_2
+    second: {fileID: 2100000, guid: 2b80820b5e34a2247a3093867b39fca0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Rook_1
+    second: {fileID: 2100000, guid: 24b6e8e16264246438be555ad65cceff, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Rook_2
+    second: {fileID: 2100000, guid: e0c7cf901320edd4d8609b4d062f6ff5, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
