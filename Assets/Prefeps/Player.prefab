@@ -297,7 +297,7 @@ Transform:
   m_GameObject: {fileID: 1165874558686627281}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.83597, y: 0.87, z: 0.14504}
-  m_LocalScale: {x: 1, y: 1.5, z: 1}
+  m_LocalScale: {x: 1, y: 1.3, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1165874557779769320}
@@ -381,6 +381,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99a4ab7cd2ccd3c4e95bd57b77e4d018, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  canMove: 1
   walkSpeed: 8
   runSpeed: 12
   gravity: 1
@@ -673,9 +674,9 @@ MonoBehaviour:
   pickupRange: 20
   pickupForce: 150
   enemyType: 0
-  bloodVfx: {fileID: 2631374381035069104, guid: a7a287d3dcfd2eb4e9f1189927a1a546,
+  impactVfx: {fileID: 1892351807075712, guid: 44be68b4fc4366142a9cd1ae1f761ea4, type: 3}
+  muzzleFlashVfx: {fileID: 198234346748616026, guid: ad2ab49d0a2a17148bd51c93d977bdbc,
     type: 3}
-  muzzleFlashVfx: {fileID: 0}
   _camera: {fileID: 1165874557779769325}
   recoilAmount: 1
   maxRecoil: 3
