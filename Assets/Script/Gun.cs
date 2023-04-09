@@ -43,6 +43,7 @@ public class Gun : MonoBehaviour
     [SerializeField] GameObject impactVfx;
     [SerializeField] ParticleSystem muzzleFlashVfx;
 
+
     [Header("Camera")]
     public Camera _camera;
 
@@ -196,10 +197,6 @@ private float currentRecoil = 0f; // Mevcut geri tepme miktarı
             else if(hit.transform.CompareTag("Door"))
             {
                 hit.transform.gameObject.GetComponent<DoorTask>().open();
-            }
-            else if (hit.transform.CompareTag("Button"))
-            {
-                hit.transform.gameObject.GetComponent<ButtonMng>().isaretle();
             }
 
             muzzleFlashVfx.Emit(1);
