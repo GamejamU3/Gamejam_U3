@@ -8,6 +8,7 @@ public class SesOynatici : MonoBehaviour
     public bool isWork = false;
     public int olduguAsama;
     public bool asamaGecicekMi = false;
+    public bool kilitleyecekMi = false;
 
     public AudioClip[] sesler;
     private AudioSource sound;
@@ -30,6 +31,10 @@ public class SesOynatici : MonoBehaviour
 
     IEnumerator sesiOynat()
     {
+        if(kilitleyecekMi==true)
+        {
+            mng.player.GetComponent<Movement>().canMove = false;
+        }
         for (int i = 0; i < sesler.Length; i++)
         {
             sound.clip = sesler[i];
@@ -42,6 +47,10 @@ public class SesOynatici : MonoBehaviour
         {
             mng.taskNum = olduguAsama + 1;
         }
-       
+        if (kilitleyecekMi == true)
+        {
+            mng.player.GetComponent<Movement>().canMove = true;
+        }
+
     }
 }
