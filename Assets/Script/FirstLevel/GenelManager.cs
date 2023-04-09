@@ -11,7 +11,9 @@ public class GenelManager : MonoBehaviour
     public TextMeshProUGUI taskText;
     public string[] task;
     public float yaziBeklemeSure;
-
+    private Coroutine chngtsk;
+    [Space(10)]
+    [Header("Kapýlar")]
     public GameObject DersKapi;
     public GameObject yemekhaneKapi;
     public GameObject cephaneKapi;
@@ -62,30 +64,36 @@ public class GenelManager : MonoBehaviour
     }
     IEnumerator gorev()
     {
-        StartCoroutine(changeTask());
+        chngtsk=StartCoroutine(changeTask());
         DersKapi.GetComponent<DoorMng>().isLocked = true;
         yield return new WaitUntil(() => taskNum == 1);
         DersKapi.GetComponent<DoorMng>().isLocked = false;
-        StartCoroutine(changeTask());
+        StopCoroutine(chngtsk);
+        chngtsk = StartCoroutine(changeTask());
         yield return new WaitUntil(() => taskNum == 2);
         DersKapi.GetComponent<DoorMng>().isLocked = true;
-        StartCoroutine(changeTask());
+        StopCoroutine(chngtsk);
+        chngtsk = StartCoroutine(changeTask());
         yield return new WaitUntil(() => taskNum == 3);
-        StartCoroutine(changeTask());
+        StopCoroutine(chngtsk);
+        chngtsk = StartCoroutine(changeTask());
         spawnBot();
         yield return new WaitUntil(() => taskNum == 4);
         DersKapi.GetComponent<DoorMng>().isLocked = false;
         NPC.SetActive(true);
-        StartCoroutine(changeTask());
+        StopCoroutine(chngtsk);
+        chngtsk = StartCoroutine(changeTask());
         yield return new WaitUntil(() => taskNum == 5);
         //bu sefer change task yok çünkü sert yazdýrýcam
         cephaneKapi.GetComponent<DoorMng>().isLocked = false;
         silahOnIzleme.SetActive(true);
         yield return new WaitUntil(() => taskNum == 6);
-        StartCoroutine(changeTask());
+        StopCoroutine(chngtsk);
+        chngtsk = StartCoroutine(changeTask());
         silahOnIzleme.SetActive(false);
         yield return new WaitUntil(() => taskNum == 7);
-        StartCoroutine(changeTask());
+        StopCoroutine(chngtsk);
+        chngtsk = StartCoroutine(changeTask());
     }
 
     public void spawnBot()

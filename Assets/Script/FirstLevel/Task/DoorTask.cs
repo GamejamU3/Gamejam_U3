@@ -15,7 +15,7 @@ public class DoorTask : MonoBehaviour
     {
         sound = GetComponent<AudioSource>();
         mng = GameObject.Find("Manager").GetComponent<GenelManager>();
-        anim = GetComponent<Animator>();
+        anim = GetComponentInParent<Animator>();
     }
 
     public void open()

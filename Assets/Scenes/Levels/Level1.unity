@@ -15628,13 +15628,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 416383797}
     m_Modifications:
+    - target: {fileID: 127260, guid: ac7a01ca06ca9044eb15b32cb7a936f8, type: 3}
+      propertyPath: m_TagString
+      value: Door
+      objectReference: {fileID: 0}
     - target: {fileID: 141970, guid: ac7a01ca06ca9044eb15b32cb7a936f8, type: 3}
       propertyPath: m_Name
       value: "Kap\u0131"
       objectReference: {fileID: 0}
     - target: {fileID: 141970, guid: ac7a01ca06ca9044eb15b32cb7a936f8, type: 3}
       propertyPath: m_TagString
-      value: Door
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 417258, guid: ac7a01ca06ca9044eb15b32cb7a936f8, type: 3}
       propertyPath: m_RootOrder
@@ -17166,12 +17170,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 499240, guid: ef77650fcc7dfd64a8d614922d90c382,
     type: 3}
   m_PrefabInstance: {fileID: 555704253}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &559387875 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 141970, guid: ac7a01ca06ca9044eb15b32cb7a936f8,
-    type: 3}
-  m_PrefabInstance: {fileID: 487857807}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &562188255
 PrefabInstance:
@@ -32764,6 +32762,26 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 987699757}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &990986063 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 127260, guid: ac7a01ca06ca9044eb15b32cb7a936f8,
+    type: 3}
+  m_PrefabInstance: {fileID: 487857807}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &990986068
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 990986063}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a0ef60d393cf03e4fa9c71550b7fce1c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sesler: []
+  isWork: 0
 --- !u!1001 &992062801
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -42599,7 +42617,7 @@ GameObject:
   - component: {fileID: 1376625752}
   - component: {fileID: 1376625751}
   - component: {fileID: 1376625750}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: "SesOynat\u0131c\u0131 (1)"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -47816,20 +47834,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 487857807}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1556522429
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 559387875}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a0ef60d393cf03e4fa9c71550b7fce1c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sesler: []
-  isWork: 0
 --- !u!1001 &1559336724
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -48957,7 +48961,7 @@ GameObject:
   - component: {fileID: 1636789864}
   - component: {fileID: 1636789863}
   - component: {fileID: 1636789862}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: "SesOynat\u0131c\u0131"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -54166,7 +54170,7 @@ GameObject:
   - component: {fileID: 1859626925}
   - component: {fileID: 1859626924}
   - component: {fileID: 1859626923}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: "SesOynat\u0131c\u0131 (2)"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
