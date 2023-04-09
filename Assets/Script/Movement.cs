@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Movement : MonoBehaviour
 {
-
+    public bool canMove = true;
     [Header("Player Control Settings")]
     private float verticalInput;
     private float horizontalInput;
@@ -33,9 +33,17 @@ public class Movement : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.Space) && controller.isGrounded){
             jump= true;
         }
-
-        horizontalInput = Input.GetAxis("Horizontal");
-        verticalInput = Input.GetAxis("Vertical");
+        if(canMove==true)
+        {
+            horizontalInput = Input.GetAxis("Horizontal");
+            verticalInput = Input.GetAxis("Vertical");
+        }
+        else
+        {
+            horizontalInput = 0;
+            verticalInput = 0;
+        }
+      
 
         if (Input.GetKey(KeyCode.LeftShift))
         {

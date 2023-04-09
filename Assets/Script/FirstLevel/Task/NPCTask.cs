@@ -49,6 +49,8 @@ public class NPCTask : MonoBehaviour
     IEnumerator task()
     {
         //Karakterin hareket etmesini engelle
+        mng.player.GetComponent<Movement>().canMove = false;
+        gorunmezEngel.SetActive(true);
         target = player;
         for (int i = 0; i < konusmalar.Length; i++)
         {
@@ -71,11 +73,12 @@ public class NPCTask : MonoBehaviour
         mng.yemekhaneKapi.GetComponent<Animator>().SetBool("character_nearby", true);
         transform.DOMove(gidecegiKonum.position, 5f);
 
-        gorunmezEngel.SetActive(true);
+        mng.player.GetComponent<Movement>().canMove = true;
         mng.DersKapi.GetComponent<DoorMng>().isLocked = true;
         yield return new WaitForSeconds(3);
         mng.yemekhaneKapi.GetComponent<Animator>().SetBool("character_nearby", false);
         //karakterin hareket etmesini aç
+       
 
         mng.taskText.text = "";
         mng.taskText.text = "<color=red>CEPHANELIGE HEMEN GIT !!!</color>";

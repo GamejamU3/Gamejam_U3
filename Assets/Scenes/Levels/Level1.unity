@@ -46215,6 +46215,7 @@ MonoBehaviour:
   isWork: 0
   olduguAsama: 5
   asamaGecicekMi: 1
+  kilitleyecekMi: 1
   sesler:
   - {fileID: 8300000, guid: 62a42ef330b7a1d4891e582cccd91c42, type: 3}
   - {fileID: 8300000, guid: ffb5dd38615b41d4a80036b6272e9079, type: 3}
@@ -52591,6 +52592,7 @@ MonoBehaviour:
   isWork: 0
   olduguAsama: 5
   asamaGecicekMi: 0
+  kilitleyecekMi: 0
   sesler:
   - {fileID: 8300000, guid: ff88cfaac7ff17e4889d80948d469df1, type: 3}
 --- !u!4 &1638227337 stripped
@@ -57952,6 +57954,7 @@ MonoBehaviour:
   isWork: 0
   olduguAsama: 6
   asamaGecicekMi: 1
+  kilitleyecekMi: 0
   sesler:
   - {fileID: 8300000, guid: 2c233533d266cce499ac6385fea95f51, type: 3}
 --- !u!1001 &1860074976
