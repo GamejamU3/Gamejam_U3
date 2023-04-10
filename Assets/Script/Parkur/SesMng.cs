@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-
 public class SesMng : MonoBehaviour
 {
     public Animator anim;
@@ -14,6 +13,9 @@ public class SesMng : MonoBehaviour
     public bool isPlay = false;
     static SesMng instance;
     public int sceneIndex;
+
+    public int olumSayisi;
+    public GameObject gecText;
     private void Awake()
     {
         check();
@@ -77,6 +79,21 @@ public class SesMng : MonoBehaviour
         {
             isWork = true;
             StartCoroutine(go());
+        }
+
+       
+
+        if (olumSayisi>3 )
+        {
+            if(gecText.gameObject.activeInHierarchy==false)
+            {
+                gecText.SetActive(true);
+            }
+        }
+
+        if(gecText.gameObject.activeInHierarchy == true && Input.GetKeyDown(KeyCode.T))
+        {
+            GameObject.Find("NextLevel").GetComponent<NextLevel>().levelGec();
         }
     }
 }

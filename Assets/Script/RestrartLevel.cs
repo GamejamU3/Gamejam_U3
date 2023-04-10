@@ -16,6 +16,7 @@ public class RestrartLevel : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
+            GameObject.Find("door_1").GetComponent<SesMng>().olumSayisi++;
             SceneManager.LoadScene(_scene.buildIndex);
         }
     }

@@ -208,7 +208,8 @@ private float currentRecoil = 0f; // Mevcut geri tepme miktarı
                 hit.transform.gameObject.GetComponent<ButtonMng>().isaretle();
             }
 
-            gunSound.PlayOneShot(gunClip);
+            gunSound.clip = gunClip;
+            gunSound.Play();
             muzzleFlashVfx.Emit(1);
             GameObject blood = Instantiate(impactVfx, hit.point, Quaternion.LookRotation(hit.normal));
             yield return new WaitForSeconds(bloodTime);
@@ -222,7 +223,9 @@ private float currentRecoil = 0f; // Mevcut geri tepme miktarı
     private IEnumerator Reload()
     {
         Debug.Log("Reloading..");
-        gunSound.PlayOneShot(reloadClip);
+        //gunSound.PlayOneShot(reloadClip);
+        gunSound.clip = reloadClip;
+        gunSound.Play();
         isReloading = true;
         haveAmmo = false;
         yield return new WaitForSeconds(currentWeapon.reloadTime);

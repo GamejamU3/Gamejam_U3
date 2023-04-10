@@ -27,11 +27,16 @@ public class NextLevel : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            black.DOFade(1,1f).OnComplete(()=> SceneManager.LoadScene(_scene.buildIndex + 1));
-            if(canDelObj==true)
-            {
-                Destroy(obj);
-            }
+            levelGec();
+        }
+    }
+
+    public void levelGec()
+    {
+        black.DOFade(1, 1f).OnComplete(() => SceneManager.LoadScene(_scene.buildIndex + 1));
+        if (canDelObj == true)
+        {
+            Destroy(obj);
         }
     }
 }
