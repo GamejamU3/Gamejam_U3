@@ -18940,15 +18940,15 @@ MonoBehaviour:
   black: {fileID: 335977108}
   taskText: {fileID: 289345695}
   task:
-  - 'Yemekhaneye git '
-  - Poligona git
-  - "1 e basarak eline silah\u0131n\u0131 al"
-  - 10 tane bot vur
-  - "Cephaneye git ve silah\u0131n\u0131 b\u0131rak"
-  - "Cephaneye git ve silah\u0131n\u0131 b\u0131rak"
-  - "Kap\u0131ya yakla\u015F"
-  - "Kap\u0131ya ate\u015F et !"
-  - "Kap\u0131dan \u0130\xE7eri Gir"
+  - YEMEKHANEYE GIT
+  - POLIGONA GIT
+  - 1 E BASARAK ELINE SILAH AL
+  - 10 TANE BOT VUR
+  - CEPHANEYE GIT VE SILAHINI BIRAK
+  - CEPHANEYE GIT VE SILAHINI BIRAK
+  - KAPIYA YAKLAS
+  - KAPIYA ATES ET !
+  - KAPIDAN ICERI GIR
   yaziBeklemeSure: 0.1
   player: {fileID: 0}
   DersKapi: {fileID: 1486048707}
