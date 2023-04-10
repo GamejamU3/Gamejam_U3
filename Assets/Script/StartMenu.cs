@@ -4,6 +4,7 @@ using UnityEngine;
 using DG.Tweening;
 using UnityEngine.Audio;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 
 public class StartMenu : MonoBehaviour
@@ -11,6 +12,7 @@ public class StartMenu : MonoBehaviour
     public GameObject[] buttons;
     public Vector3[] buttonsStartPos;
     public float duration;
+    public TextMeshProUGUI text;
 
     //public AudioClip buttonSwoosh;
     //public AudioClip buttonClick;
@@ -24,6 +26,7 @@ public class StartMenu : MonoBehaviour
             buttons[i].transform.localPosition = new Vector3(buttons[i].transform.localPosition.x-2000, buttons[i].transform.localPosition.y, buttons[i].transform.localPosition.z);
         }
         StartCoroutine(go());
+        text.DOFade(1, 3).From(0);
     }
     IEnumerator go()
     {
