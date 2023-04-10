@@ -16,6 +16,7 @@ public class PuzzleLight : MonoBehaviour
 
     [SerializeField] String correctName;
 
+    [SerializeField] GameObject kapi;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -25,6 +26,7 @@ public class PuzzleLight : MonoBehaviour
             light.intensity = 2;
             letter.transform.position = new Vector3(currentPosition.x, currentPosition.y, -19.95f);
             letter.transform.gameObject.GetComponent<Renderer>().materials[1].EnableKeyword("_EMISSION");
+            kapi.gameObject.GetComponent<LevelKapi>().correctCount ++;
         }
     }
 
@@ -37,6 +39,7 @@ public class PuzzleLight : MonoBehaviour
             letter.transform.position = currentPosition;
             letter.transform.gameObject.GetComponent<Renderer>().materials[1] = defaultMaterial;
             letter.transform.gameObject.GetComponent<Renderer>().materials[1].DisableKeyword("_EMISSION");
+            kapi.gameObject.GetComponent<LevelKapi>().correctCount--;
         }
     }
 }
