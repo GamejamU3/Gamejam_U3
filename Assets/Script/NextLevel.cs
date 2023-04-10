@@ -20,6 +20,7 @@ public class NextLevel : MonoBehaviour
         _scene = SceneManager.GetActiveScene();
         obj = GameObject.Find(objName);
         black = GameObject.Find("Black").GetComponent<Image>();
+        black.DOFade(0, 1f).From(1);
     }
 
     private void OnTriggerEnter(Collider other)

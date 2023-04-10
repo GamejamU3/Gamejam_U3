@@ -102,13 +102,17 @@ public class soruMng : MonoBehaviour
     }
     private void Update()
     {
-        if (sesMng.GetComponent<SesMng2>().finish == true &&play==false)
+        if(play==false)
         {
-            play = true;
+            if (sesMng.GetComponent<SesMng2>().finish == true)
+            {
+                play = true;
 
-            chngQues = StartCoroutine(soruYaz());
+                chngQues = StartCoroutine(soruYaz());
 
+            }
         }
+        
     }
     public void soruGec()
     {
