@@ -1,0 +1,14 @@
+Video Edit: Canva
+Environment: https://assetstore.unity.com/packages/3d/environments/sci-fi/sci-fi-styled-modular-pack-82913
+Gun: https://sketchfab.com/3d-models/sci-fi-assault-rifle-d2596ed504b84ffda761b0886c26b202
+NPC: https://assetstore.unity.com/packages/3d/characters/robots/space-robot-kyle-urp-4696
+Karakterler: Mixamo
+https: //sketchfab.com/3d-models/wooden-blocks-a36e29b445774da1ba4220b167e6aadd
+https: //pixabay.com/sound-effects/blaster-2-81267/
+https: //pixabay.com/sound-effects/revolvercock1-6924/
+https: //sketchfab.com/3d-models/button-round-flat-c7e7966f8a7c49b8a7bae8974d08e120
+Sayilar: https://sketchfab.com/jihambru
+Satranc: https://sketchfab.com/3d-models/chess-set-bcbf8955eaa14653a6b3f5f11cc38c14
+	https://sketchfab.com/3d-models/chess-board-a0fb4aa0e75649e0991a2571ab70ea44
+Skybox: https://assetstore.unity.com/packages/2d/textures-materials/sky/allsky-free-10-sky-skybox-set-146014
+VFX: https://assetstore.unity.com/packages/vfx/particles/particle-pack-127325
