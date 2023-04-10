@@ -12,18 +12,31 @@ public class SesMng2 : MonoBehaviour
     public AudioSource sound;
 
     public bool isPlay = false;
+    public bool finish = false;
     static SesMng2 instance;
     public int sceneIndex;
     
     private void Awake()
     {
-        check();
+        
 
         sound = GetComponent<AudioSource>();
-       
+        check();
 
 
 
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.gameObject.tag=="Player")
+        {
+            if(isPlay==false)
+            {
+                isPlay = true;
+                StartCoroutine(go());
+            }
+        }
     }
 
 
@@ -69,15 +82,11 @@ public class SesMng2 : MonoBehaviour
             sound.Play();
             yield return new WaitForSeconds(sesler[i].length);
         }
-        isPlay = true;
+        finish = true;
     }
 
     private void Start()
     {
-        if(isPlay==false)
-        {
-            StartCoroutine(go());
-        }
         
     }
 }

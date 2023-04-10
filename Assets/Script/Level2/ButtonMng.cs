@@ -21,7 +21,7 @@ public class ButtonMng : MonoBehaviour
 
     public void isaretle()
     {
-        if(soruMng.GetComponent<soruMng>().soruYazildiMi==true)
+        if(soruMng.GetComponent<soruMng>().soruYazildiMi==true && soruMng.GetComponent<soruMng>().canSelect == true)
         {
             if (a == true)
             {

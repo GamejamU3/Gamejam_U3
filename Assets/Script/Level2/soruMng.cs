@@ -11,6 +11,7 @@ public class soruMng : MonoBehaviour
     public AudioSource sound;
     private Coroutine chngQues;
     private bool play = false;
+    public GameObject door;
 
     [Header("Text")]
     public TextMeshProUGUI quesText;
@@ -93,10 +94,11 @@ public class soruMng : MonoBehaviour
             }
         }
         soruYazildiMi = true;
+        canSelect = true;
     }
     private void Update()
     {
-        if (sesMng.GetComponent<SesMng2>().isPlay == true &&play==false)
+        if (sesMng.GetComponent<SesMng2>().finish == true &&play==false)
         {
             play = true;
 
@@ -138,37 +140,48 @@ public class soruMng : MonoBehaviour
     #region cevaplar IE
     IEnumerator A()
     {
+        canSelect = false;
         yield return new WaitForSeconds(0);
         if (activeQues == 1)
         {
             //Doðru
-            
 
-           
+
+            canSelect = false;
             soruGec();
+            
 
         }
         else if (activeQues == 2)
         {
             sesOynat(soru2[0]);
+            yield return new WaitForSeconds(soru2[0].length);
+            oldur();
 
         }
         else if (activeQues == 3)
         {
             sesOynat(soru3[0]);
+            yield return new WaitForSeconds(soru3[0].length);
+            oldur();
         }
     }
 
     IEnumerator B()
     {
+        canSelect = false;
         yield return new WaitForSeconds(0);
         if (activeQues == 1)
         {
+
             sesOynat(soru1[1]);
+            yield return new WaitForSeconds(soru1[1].length);
+            oldur();
         }
         else if (activeQues == 2)
         {
             //Doðru
+            
             sesOynat(soru2[1]);
             yield return new WaitForSeconds(soru2[1].length);
             soruGec();
@@ -176,43 +189,57 @@ public class soruMng : MonoBehaviour
         else if (activeQues == 3)
         {
             sesOynat(soru3[1]);
+            yield return new WaitForSeconds(soru3[1].length);
+            oldur();
         }
     }
 
     IEnumerator C()
     {
+        canSelect = false;
         yield return new WaitForSeconds(0);
         if (activeQues == 1)
         {
             sesOynat(soru1[2]);
+            yield return new WaitForSeconds(soru1[2].length);
+            oldur();
         }
         else if (activeQues == 2)
         {
             sesOynat(soru2[2]);
+            yield return new WaitForSeconds(soru2[2].length);
+            oldur();
         }
         else if (activeQues == 3)
         {
             sesOynat(soru3[2]);
+            yield return new WaitForSeconds(soru3[2].length);
+            oldur();
         }
     }
     IEnumerator D()
     {
+        canSelect = false;
         yield return new WaitForSeconds(0);
         if (activeQues == 1)
         {
             sesOynat(soru1[3]);
+            yield return new WaitForSeconds(soru1[3].length);
+            oldur();
         }
         else if (activeQues == 2)
         {
             sesOynat(soru2[3]);
+            yield return new WaitForSeconds(soru2[3].length);
+            oldur();
         }
         else if (activeQues == 3)
         {
             //Doðru
-
+            
             sesOynat(soru3[3]);
             yield return new WaitForSeconds(soru3[3].length);
-            soruGec();
+            door.GetComponent<DoorMng>().isLocked = false;
         }
     }
 
