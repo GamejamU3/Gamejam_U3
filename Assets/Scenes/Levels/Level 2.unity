@@ -6757,7 +6757,7 @@ GameObject:
   - component: {fileID: 1891848238}
   - component: {fileID: 1891848240}
   - component: {fileID: 1891848239}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: Soru
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7115,7 +7115,7 @@ GameObject:
   - component: {fileID: 1944890059}
   - component: {fileID: 1944890058}
   - component: {fileID: 1944890057}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: SoruCanvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}

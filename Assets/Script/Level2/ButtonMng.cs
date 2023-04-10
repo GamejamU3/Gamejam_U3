@@ -21,6 +21,7 @@ public class ButtonMng : MonoBehaviour
 
     public void isaretle()
     {
+        Debug.Log("Deydi");
         if(soruMng.GetComponent<soruMng>().soruYazildiMi==true && soruMng.GetComponent<soruMng>().canSelect == true)
         {
             if (a == true)

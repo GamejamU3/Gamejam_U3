@@ -22,9 +22,10 @@ public class DoorTask : MonoBehaviour
     {   
         if(isWork==false)
         {
-            isWork = true;
+           
             if (mng.taskNum == 7)
             {
+                isWork = true;
                 anim.SetBool("character_nearby", true);
                 mng.taskNum = 8;
             }

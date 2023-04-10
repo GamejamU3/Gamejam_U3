@@ -40,7 +40,11 @@ public class soruMng : MonoBehaviour
     {
         sesMng = GameObject.Find("sesMng");
         sound = GetComponent<AudioSource>();
-       
+        quesText.text = "";
+        for (int i = 0; i < siklar.Length; i++)
+        {
+            siklar[i].text = "";
+        }
 
     }
     
