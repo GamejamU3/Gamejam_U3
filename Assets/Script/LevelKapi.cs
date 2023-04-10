@@ -16,6 +16,7 @@ public class LevelKapi : MonoBehaviour
         else
         {
             this.gameObject.GetComponent<DoorMng>().isLocked = false;
+            GameObject.Find("SesManager").GetComponent<level3SesMng>().finish = true;
         }
     }
 }
