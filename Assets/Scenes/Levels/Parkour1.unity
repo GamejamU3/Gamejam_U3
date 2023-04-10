@@ -22765,6 +22765,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Kare
       objectReference: {fileID: 0}
+    - target: {fileID: 440704226240575478, guid: 6b040ed27ffe2db4f9ef9f1eb1ca04a5,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3388004672113206546, guid: 6b040ed27ffe2db4f9ef9f1eb1ca04a5,
         type: 3}
       propertyPath: m_Size.z

@@ -27,7 +27,7 @@ public class ParkourManager : MonoBehaviour
                     GameObject go = new GameObject();
                     go.name = "ParkourManager";
                     _instance = go.AddComponent<ParkourManager>();
-                    DontDestroyOnLoad(go);
+                    //DontDestroyOnLoad(go);
                 }
             }
             return _instance;
@@ -39,12 +39,13 @@ public class ParkourManager : MonoBehaviour
         if (_instance == null)
         {
             _instance = this;
-            DontDestroyOnLoad(gameObject);
+            //DontDestroyOnLoad(gameObject);
         }
         else
         {
             Destroy(gameObject);
         }
+
     }
 
     public void SetPlatforms(int button)
