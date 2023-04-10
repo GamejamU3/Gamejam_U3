@@ -46,6 +46,7 @@ public class Gun : MonoBehaviour
     [Header("Sound")]
     [SerializeField] AudioSource gunSound;
     [SerializeField] AudioClip gunClip;
+    [SerializeField] AudioClip reloadClip;
 
     
     [Header("Camera")]
@@ -221,6 +222,7 @@ private float currentRecoil = 0f; // Mevcut geri tepme miktarı
     private IEnumerator Reload()
     {
         Debug.Log("Reloading..");
+        gunSound.PlayOneShot(reloadClip);
         isReloading = true;
         haveAmmo = false;
         yield return new WaitForSeconds(currentWeapon.reloadTime);
