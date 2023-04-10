@@ -43,7 +43,11 @@ public class Gun : MonoBehaviour
     [SerializeField] GameObject impactVfx;
     [SerializeField] ParticleSystem muzzleFlashVfx;
 
+    [Header("Sound")]
+    [SerializeField] AudioSource gunSound;
+    [SerializeField] AudioClip gunClip;
 
+    
     [Header("Camera")]
     public Camera _camera;
 
@@ -203,6 +207,7 @@ private float currentRecoil = 0f; // Mevcut geri tepme miktarı
                 hit.transform.gameObject.GetComponent<ButtonMng>().isaretle();
             }
 
+            gunSound.PlayOneShot(gunClip);
             muzzleFlashVfx.Emit(1);
             GameObject blood = Instantiate(impactVfx, hit.point, Quaternion.LookRotation(hit.normal));
             yield return new WaitForSeconds(bloodTime);
