@@ -771,6 +771,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -196311837909627711, guid: d16476f681adb6241884a425a86d5d87,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: f20af4e7adadfe94ab8d2e5aba2bdfbe, type: 2}
+    - target: {fileID: -21129519956609639, guid: d16476f681adb6241884a425a86d5d87,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: f20af4e7adadfe94ab8d2e5aba2bdfbe, type: 2}
     - target: {fileID: 919132149155446097, guid: d16476f681adb6241884a425a86d5d87,
         type: 3}
       propertyPath: m_Name
@@ -1616,6 +1626,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 680dc5bdbc0f453459e650de9dcf8845, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  canDelObj: 0
+  objName: 
 --- !u!65 &223641887
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1961,6 +1973,10 @@ PrefabInstance:
     - target: {fileID: 415124, guid: 820591594dcfa124d8a9c5d016d6c22c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 802980476, guid: 820591594dcfa124d8a9c5d016d6c22c, type: 3}
+      propertyPath: isLocked
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 820591594dcfa124d8a9c5d016d6c22c, type: 3}
@@ -8831,11 +8847,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -6489738709087351409, guid: fe8b49989e7c4834a86ad8fbaa131168,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: f20af4e7adadfe94ab8d2e5aba2bdfbe, type: 2}
     - target: {fileID: 919132149155446097, guid: fe8b49989e7c4834a86ad8fbaa131168,
         type: 3}
       propertyPath: m_Name
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5740572255679489708, guid: fe8b49989e7c4834a86ad8fbaa131168,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: f20af4e7adadfe94ab8d2e5aba2bdfbe, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fe8b49989e7c4834a86ad8fbaa131168, type: 3}
 --- !u!1001 &1731559219
@@ -11888,7 +11914,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!65 &7798867402690946211
 BoxCollider:
@@ -12024,7 +12050,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!65 &8601919187601479573
 BoxCollider:
@@ -12170,7 +12196,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!65 &8968764763432126118
 BoxCollider:
