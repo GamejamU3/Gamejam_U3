@@ -12,8 +12,8 @@ public class StartMenu : MonoBehaviour
     public Vector3[] buttonsStartPos;
     public float duration;
 
-    public AudioClip buttonSwoosh;
-    public AudioClip buttonClick;
+    //public AudioClip buttonSwoosh;
+    //public AudioClip buttonClick;
 
     #region Butonlarin Ekrana Kayarak Yerlesmesi
     private void Awake()
@@ -31,8 +31,8 @@ public class StartMenu : MonoBehaviour
         {
             yield return new WaitForSeconds(duration/2);
             buttons[i].transform.DOLocalMoveX(buttonsStartPos[i].x, duration);
-            yield return new WaitForSeconds(duration-buttonSwoosh.length); //Butonun tam ekrana yerleþmeden önceki anda sesi oynatmasýný saðlýyor
-            AudioSource.PlayClipAtPoint(buttonSwoosh, Vector3.zero);
+            //yield return new WaitForSeconds(duration-buttonSwoosh.length); //Butonun tam ekrana yerleþmeden önceki anda sesi oynatmasýný saðlýyor
+            //AudioSource.PlayClipAtPoint(buttonSwoosh, Vector3.zero);
         }
     }
 
@@ -46,8 +46,9 @@ public class StartMenu : MonoBehaviour
 
     IEnumerator openScene(string levelName)
     {
-        AudioSource.PlayClipAtPoint(buttonClick, Vector3.zero);
-        yield return new WaitForSeconds(buttonClick.length);
+        //AudioSource.PlayClipAtPoint(buttonClick, Vector3.zero);
+        //yield return new WaitForSeconds(buttonClick.length);
+        yield return new WaitForSeconds(0);
         SceneManager.LoadScene(levelName);
 
     }
@@ -61,8 +62,9 @@ public class StartMenu : MonoBehaviour
 
     IEnumerator closeGame2()
     {
-        AudioSource.PlayClipAtPoint(buttonClick, Vector3.zero);
-        yield return new WaitForSeconds(buttonClick.length);
+        //AudioSource.PlayClipAtPoint(buttonClick, Vector3.zero);
+        //yield return new WaitForSeconds(buttonClick.length);
+        yield return new WaitForSeconds(0);
         Application.Quit();
 
     }
