@@ -48716,6 +48716,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -5.754
       objectReference: {fileID: 0}
+    - target: {fileID: -2004136995773306988, guid: cc5ae4680662be044a9437ec19986f1e,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: -1285283773094673657, guid: cc5ae4680662be044a9437ec19986f1e,
         type: 3}
       propertyPath: m_LocalRotation.w
@@ -67061,6 +67066,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canDelObj: 0
   objName: 
+  black: {fileID: 0}
 --- !u!65 &2143921854
 BoxCollider:
   m_ObjectHideFlags: 0
